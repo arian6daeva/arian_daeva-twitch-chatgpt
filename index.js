@@ -87,10 +87,10 @@ app.get('/gpt/:text', async (req, res) => {
       console.log("Agent answer: " + agent_response);
       messages.push({ role: "assistant", content: agent_response });
 
-      // Cap the response at 500 characters
-      if (agent_response.length > 500) {
-        console.log("Agent answer exceeds the character limit. Truncating to 500 characters.");
-        agent_response = agent_response.substring(0, 500);
+      // Cap the response at 399 characters
+      if (agent_response.length > 399) {
+        console.log("Agent answer exceeds the character limit. Truncating to 399 characters.");
+        agent_response = agent_response.substring(0, 399);
         console.log("Truncated Agent answer: " + agent_response);
       }
 
@@ -116,10 +116,10 @@ app.get('/gpt/:text', async (req, res) => {
     if (response.data.choices) {
       let agent_response = response.data.choices[0].text;
       console.log("Agent answer: " + agent_response);
-      // Cap the response at 500 characters
-      if (agent_response.length > 500) {
-        console.log("Agent answer exceeds the character limit. Truncating to 500 characters.");
-        agent_response = agent_response.substring(0, 500);
+      // Cap the response at 399 characters
+      if (agent_response.length > 399) {
+        console.log("Agent answer exceeds the character limit. Truncating to 399 characters.");
+        agent_response = agent_response.substring(0, 399);
         console.log("Truncated Agent answer: " + agent_response);
       }
 
